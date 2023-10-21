@@ -1,0 +1,70 @@
+/* ------------------- */
+/* global declaration */
+/* ------------------ */
+
+* {
+    margin: o;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* debugging */
+    border: 1px solid red;
+
+    /* global default font family */
+    font-family: monospace;
+}
+
+body {
+    background-color: #f3f364;
+}
+
+p {
+    color: #c20cad;
+    font-size: 1.3em;
+}
+
+button {
+    outline: none;
+    background-color: #c20cad;
+    color: #f3f364;
+    font-size: 1.3em;
+}
+
+/* ------------------- */
+/* outer main content */
+/* ------------------- */
+
+.outer-main {
+    padding: 10px;
+    height: 100v;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* --------------- */
+/* nav bar section */
+/* --------------- */
+
+.nav-bar p {
+    display: inline-block;
+    padding-top: 10px;
+}
+
+/* ----------------- */
+/* main page content */
+/* ----------------- */
+
+.main-content {
+    background-color: black;
+    height: 700px;
+}
+
+/* ----------------- */
+/* Quiz Introduction */
+/* ----------------- */
+
+
+/* ----------------- */
+/* Quiz Main Content */
+/* ----------------- */
