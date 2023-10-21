@@ -38,6 +38,10 @@ h1, h2 {
     text-align: center;
 }
 
+li {
+    list-style: none;
+}
+
 /* ------------------- */
 /* outer main content */
 /* ------------------- */
@@ -85,26 +89,64 @@ h1, h2 {
 /* Quiz Introduction */
 /* ----------------- */
 
-.quiz-intro main {
-    margin-bottom: 30vh;
-    margin-left: 10px;
-    margin-right: 10px;
+
+.quiz-intro {
+    background-color: rgb(194, 12, 173, 0.6);
+    border: 2px solid #f3f364;
+    border-radius: 65px;
+    margin: 0 18%;
+    display: none;
+
 }
 
 .quiz-intro, h1, p {
     color: #f3f364;
-    margin: 4%;
     font-weight:200;
 }
 .quiz-intro button {
     display: block;
     margin: 0 auto;
 }
+
+.quiz-intro main {
+    margin-bottom: 30vh;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 /* ----------------- */
 /* Quiz Main Content */
 /* ----------------- */
 
 main {
-display: none;
+display: block;
 
+}
+
+/* --------------- */
+/* Question Screen */
+/* --------------- */
+
+.question-view {
+    display: none;
+}
+
+/* -------------- */
+/* Quiz Exit View */
+/* -------------- */
+
+.quiz-exit-view {
+    display: none;
+}
+
+/* ---------------- */
+/* High Scores View */
+/* ---------------- */
+
+.highscores-view {
+    display: block;
+}
+
+.highscores-view ol {
+    overflow-y: scroll;
+    max-height: 100px;
 }
