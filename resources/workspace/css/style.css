@@ -8,7 +8,7 @@
     box-sizing: border-box;
 
     /* debugging */
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
     /* global default font family */
     font-family: monospace;
@@ -26,7 +26,7 @@ p {
 
 button {
     outline: none;
-    background-color: #c20cad;
+    background-color: rgb(194, 12, 173);
     color: #f3f364;
     font-size: 1.3em;
 }
@@ -52,7 +52,8 @@ button {
     display: flex;
     justify-content: end;
     margin-top: -25px;
-    margin-bottom: 3px;
+    margin-bottom: 10px;
+    color: #c20cad;
 }
 
 /* ----------------- */
@@ -60,16 +61,22 @@ button {
 /* ----------------- */
 
 .main-content {
-    background: rgb(0, 0, 0, 0.4);
+    background: rgba(194, 12, 173, 0.5);
     height: 700px;
-    width: 50%;
+    width: 650px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* ----------------- */
 /* Quiz Introduction */
 /* ----------------- */
-
+.quiz-intro, h1, p {
+    color: #f3f364;
+    margin: 10px;
+}
 
 /* ----------------- */
 /* Quiz Main Content */
