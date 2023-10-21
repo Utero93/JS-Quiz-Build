@@ -1,3 +1,3 @@
 function printMessage() {
-    document.getElementsByClassName('nav-btn').innerHtml
+    document.getElementsByClassName('highscores-view').innerHtml
 }
