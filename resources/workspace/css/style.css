@@ -3,8 +3,8 @@
 /* ------------------ */
 
 * {
-    margin: o;
-    padding: 0;
+    margin: o auto;
+    padding: 0 auto;
     box-sizing: border-box;
 
     /* debugging */
@@ -15,7 +15,8 @@
 }
 
 body {
-    background-color: #f3f364;
+    background-color: #f3f36d;
+    overflow: hidden;
 }
 
 p {
@@ -39,6 +40,7 @@ button {
     height: 100v;
     display: flex;
     flex-direction: column;
+    justify-content: start;
 }
 
 
@@ -47,8 +49,10 @@ button {
 /* --------------- */
 
 .nav-bar p {
-    display: inline-block;
-    padding-top: 10px;
+    display: flex;
+    justify-content: end;
+    margin-top: -25px;
+    margin-bottom: 3px;
 }
 
 /* ----------------- */
@@ -56,8 +60,10 @@ button {
 /* ----------------- */
 
 .main-content {
-    background-color: black;
+    background: rgb(0, 0, 0, 0.4);
     height: 700px;
+    width: 50%;
+    margin: 0 auto;
 }
 
 /* ----------------- */
