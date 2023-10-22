@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java Script Quiz</title>
     <link rel="stylesheet" href="./workspace/css/style.css">
-    <script type="text/Javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./workspace/js/script.js"></script>
 </head>
 <body>
     <!-- main outer div -->
@@ -14,7 +12,7 @@
 
     <!-- nav bar section -->
    <div class="nav-bar">
-    <button class="highscores-view" onclick="printMessage()">View Highscores</button>
+    <button>View Highscores</button>
     <p>Timer: 00:00</p>
    </div>
     
@@ -38,17 +36,21 @@
          <!-- ------ -->
          <!-- Step 2 -->
          <!-- ------ -->
-        <section class="question-view">
-            <h2>Question Here</h2>
-            <ul>
-                <!-- This will be generated in javascript -->
-                <li><button>Answer 1</button></li>
-                <li><button>Answer 2</button></li>
-                <li><button>Answer 3</button></li>
-                <li><button>Answer 4</button></li>
+         
+         <!-- This quiz view is the wrapper which contains the questions and answers for the test -->
+        <section class="quiz-view">
+            <h1>Javascript Quiz</h1>
+            <h2 id="question">Question Here</h2>
+         <!-- This is where the "div" container for the answer buttons, in css, btnList will be the class selecter -->
+         <!-- This is akin to answer-buttons -->
+            <ul id="btnList">
+         <!-- This will be generated in javascript using a function set to variables and adding an eventListener to call the function-->
+                <li><button class="aBtn">Answer 1</button></li>
+                <li><button class="aBtn">Answer 2</button></li>
+                <li><button class="aBtn">Answer 3</button></li>
+                <li><button class="aBtn">Answer 4</button></li>
             </ul>
-
-
+            <button class="nxt-btn">Next</button>
         </section>
 
          <!-- ------ -->
@@ -58,11 +60,11 @@
          <section class="quiz-exit-view">
             <h2>Quiz Finished</h2>
             <p>Your Score: 00</p>
-            <div>
-                <label for="">Enter Initials: </label>
-                <input type="text">
-                <button>Submit</button>
-            </div>
+            <form>
+                <h1>Enter Initials: </h1>
+                <input type="text" class="enInit" placeholder="AG">
+                <button type="submit">Submit</button>
+            </form>
          </section>
 
          <!-- ------ -->
@@ -94,7 +96,11 @@
 
     </div>
 </div>
-   
-   
+
+<script type="text/Javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./workspace/js/script.js"></script>
+<script>
+
+</script>
 </body>
 </html>
