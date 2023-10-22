@@ -7,57 +7,65 @@
     <link rel="stylesheet" href="./workspace/css/style.css">
 </head>
 <body>
-    <!-- main outer div -->
-<div class="outer-main"> 
 
-    <!-- nav bar section -->
-   <div class="nav-bar">
+  <!-- nav bar section -->
+    <div class="nav-bar">
     <button>View Highscores</button>
     <p>Timer: 00:00</p>
-   </div>
-    
-    <!-- main content of page -->
-    <div class="main-content">
+   </div> 
 
-    <!-- ------ -->
-    <!-- Step 1 -->
-    <!-- ------ -->
+    <div class="app">
+        <h1>Javascript Quiz</h1>
+        <div class="quiz-view">
+        <h2 id="question">Question Here</h2>
+        <div id="answer-buttons">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+        </div>
+        <button id="nxt-btn">Next</button>
+        </div>
+    </div>
+
+    <!-- <section class="highscores-view">
+        <h2>Highscores</h2>
+        <ol>
+            <li>AG - 22</li>
+            <li>AG - 22</li>
+            <li>AG - 22</li>
+            <li>AG - 22</li>
+            <li>AG - 22</li>
+            <li>AG - 22</li>
+            <li>AG - 22</li>
+            <li>AG - 22</li>
+            <li>AG - 22</li>
+            <li>AG - 22</li>
+            <li>AG - 22</li>
+            <li>AG - 22</li>
+        </ol>
+        <button>Go Back</button>
+        <button>Clear Highscores</button>
+    </section> -->
+
+<script src="./workspace/js/script.js"></script>
+</body>
+</html>
 
     <!-- Quiz Intro -->
 
-    <header class="quiz-intro">
-            <h1>Welcome to JS Quiz</h1>
-            <p>Lets get started with the quiz.</p>
-            <button>Start Quiz!</button>
-    </header>
-    <!-- Quiz Content/Main -->
-    <main>
-   
-         <!-- ------ -->
-         <!-- Step 2 -->
-         <!-- ------ -->
-         
-         <!-- This quiz view is the wrapper which contains the questions and answers for the test -->
-        <section class="quiz-view">
-            <h1>Javascript Quiz</h1>
-            <h2 id="question">Question Here</h2>
-         <!-- This is where the "div" container for the answer buttons, in css, btnList will be the class selecter -->
-         <!-- This is akin to answer-buttons -->
-            <ul id="btnList">
-         <!-- This will be generated in javascript using a function set to variables and adding an eventListener to call the function-->
-                <li><button class="aBtn">Answer 1</button></li>
-                <li><button class="aBtn">Answer 2</button></li>
-                <li><button class="aBtn">Answer 3</button></li>
-                <li><button class="aBtn">Answer 4</button></li>
-            </ul>
-            <button class="nxt-btn">Next</button>
-        </section>
+    <!-- <header class="quiz-intro">
+        <h1>Welcome to JS Quiz</h1>
+        <p>Lets get started with the quiz.</p>
+        <button>Start Quiz!</button>
+    </header> -->
 
          <!-- ------ -->
          <!-- Step 3 -->
          <!-- ------ -->
 
-         <section class="quiz-exit-view">
+
+         <!-- <section class="quiz-exit-view">
             <h2>Quiz Finished</h2>
             <p>Your Score: 00</p>
             <form>
@@ -65,42 +73,15 @@
                 <input type="text" class="enInit" placeholder="AG">
                 <button type="submit">Submit</button>
             </form>
-         </section>
+         </section> -->
 
          <!-- ------ -->
          <!-- Step 4 -->
          <!-- ------ -->
-        <section class="highscores-view">
-            <h2>Highscores</h2>
-            <ol>
-                <li>AG - 22</li>
-                <li>AG - 22</li>
-                <li>AG - 22</li>
-                <li>AG - 22</li>
-                <li>AG - 22</li>
-                <li>AG - 22</li>
-                <li>AG - 22</li>
-                <li>AG - 22</li>
-                <li>AG - 22</li>
-                <li>AG - 22</li>
-                <li>AG - 22</li>
-                <li>AG - 22</li>
-            </ol>
-            <button>Go Back</button>
-            <button>Clear Highscores</button>
-        </section>
+         
+       
+    <!-- </div> -->
+  
 
 
-
-    </main>
-
-    </div>
-</div>
-
-<script type="text/Javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="./workspace/js/script.js"></script>
-<script>
-
-</script>
-</body>
-</html>
+<!-- </div> -->

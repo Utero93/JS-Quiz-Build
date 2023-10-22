@@ -92,8 +92,8 @@ const questions = [
 ];
 
 const questionElement = document.getElementById("question");
-const answerButton = document.getElementById("btnList");
-const nextButton = document.getElementById("nxt-btn");
+const answerButtons = document.getElementById("answer-buttons");
+const nextButton = document.getElementsById("nxt-btn");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -106,197 +106,26 @@ function startQuiz(){
 }
 
 function showQuestion(){
+    resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.
+    question;
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
-        button.classList.add("aBtn");
-        answerButton.appendChild(button);
+        button.classList.add("btn");
+        answerButtons.appendChild(button);
     });
 
 }
 
 
+function resetState(){
+    nextButton.style.display = "none";
+    while(answerButtons.firstChild)
+        answerButtons.removeChild(answerButtons.firstChild);
+}
 
-
-
-/* let userSubmit = document.getElementsByClassName('enInit');
- console.log(userSubmit[0]);*/
-
-
-
-// code examples to help with class
-
-// // console.log("Document Body: ");
-// console.log(document.body);
-
-// console.log("Children of Document Body: ")
-// console.log(document.body.children);
-
-// console.log("First child of body: ")
-// console.log(document.body.children[0]);
-
-// console.log("First child of the ul: ")
-// console.log(document.body.children[1].children[0]);
-
-// // Accessing element by id
-// var firstChildUl = document.getElementById("first-child-ul");
-// console.log(firstChildUl)
-
-
-// // Setting style of element
-// firstChildUl.style.color = "green";
-
-// Logs window object using this
-// console.log("this: ");
-// console.log(this);
-
-// // Logs the document object
-// console.log("window.document: ");
-// console.log(window.document);
-
-// // Logs body of document
-// console.log("document.body: ");
-// console.log( document.body);
-
-
-// // Access multiple elements using .querySelectorAll()
-// var divTags = document.querySelectorAll("div");
-// var pTags = document.querySelectorAll("p");
-// var imgEl = document.querySelectorAll("img");
-
-// // Access element by ID using .querySelector()
-// var changeP = document.querySelector("#change2");
-
-// // Sets first pTags to have a font-size of 40px
-// pTags[0].setAttribute("style", "font-size: 40px;");
-
-// // Sets changeP to have multiple style attributes
-// changeP.setAttribute("style", "font-size: 25px; font-weight: bold; text-decoration:underline; ");
-
-// // Sets image source of the first image
-// imgEl[0].setAttribute("src", "./assets/images/image_1.png");
-
-// // Adds size and width styling to image
-// imgEl[0].setAttribute("style", "width:50%");
-
-// // Loops through divTags to set each one to have the color blue and the font size of 30px
-// for (var i = 0; i < divTags.length; i++) {
-//  divTags[i].setAttribute("style", "color:blue; font-size: 30px");
-// }
-
-
-// // Selects element by class
-// var timeEl = document.querySelector(".time");
-
-// // Selects element by id
-// var mainEl = document.getElementById("main");
-
-// var secondsLeft = 10;
-
-// function setTime() {
-//   // Sets interval in variable
-//   var timerInterval = setInterval(function() {
-//     secondsLeft--;
-//     timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
-
-//     if(secondsLeft === 0) {
-//       // Stops execution of action at set interval
-//       clearInterval(timerInterval);
-//       // Calls function to create and append image
-//       sendMessage();
-//     }
-
-//   }, 1000);
-// }
-
-// // Function to create and append colorsplosion image
-// function sendMessage() {
-//   timeEl.textContent = " ";
-//   var imgEl = document.createElement("img");
-//   imgEl.setAttribute("src", "images/image_1.jpg");
-//   mainEl.appendChild(imgEl);
-
-// }
-
-// setTime();
-
-
-// Access toggle switch HTML element
-// var themeSwitcher = document.querySelector("#theme-switcher");
-// var container = document.querySelector(".container");
-
-// // Set default mode to dark
-// var mode = "dark";
-
-// // Listen for a click event on toggle switch
-// themeSwitcher.addEventListener("click", function() {
-//   // If mode is dark, apply light background
-//   if (mode === "dark") {
-//     mode = "light";
-//     container.setAttribute("class", "light");
-//   }
-//   // If mode is light, apply dark background 
-//   else {
-//     mode = "dark";
-//     container.setAttribute("class", "dark");
-//   }
-// });
-
-
-// var counter = document.querySelector("#counter");
-// var addButton = document.querySelector("#add");
-// var subtractButton = document.querySelector("#subtract");
-
-// var count = localStorage.getItem("count");
-
-// counter.textContent = count;
-
-// addButton.addEventListener("click", function() {
-//   if (count < 24) {
-//     count++;
-//     counter.textContent = count;
-//     localStorage.setItem("count", count);
-//   }
-// });
-
-// subtractButton.addEventListener("click", function() {
-//   if (count > 0) {
-//     count--;
-//     counter.textContent = count;
-//     localStorage.setItem("count", count);
-//   }
-// });
-
-
-// var student = document.getElementById("student-names");
-// var grade = document.getElementById("grades");
-// var comment = document.getElementById("msg");
-// var saveButton = document.getElementById("save");
-
-// saveButton.addEventListener("click", function(event) {
-// event.preventDefault();
-
-// var studentGrade = {
-//   student: student.value,
-//   grade: grade.value,
-//   comment: comment.value.trim()
-// };
-
-// localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
-// renderMessage();
-
-// });
-
-// function renderMessage() {
-//   var lastGrade = JSON.parse(localStorage.getItem("studentGrade"));
-//   if (lastGrade !== null) {
-//     document.querySelector(".message").textContent = lastGrade.student + 
-//     " received a/an " + lastGrade.grade
-//   }
-// }
-
-
+startQuiz();
