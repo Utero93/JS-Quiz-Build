@@ -128,8 +128,12 @@ body {
     font-weight: 501;
     display: none;
 }
-
-
+.correct {
+    background: #9aeabc;
+}
+.incorrect{
+    background: #ff4000;
+}
 /* ----------------- */
 /* Quiz Introduction */
 /* ----------------- */
