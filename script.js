@@ -148,4 +148,106 @@ scoreHistory.sort(function(a, b) {
     return b.score - a.score;
 });
 
+// Creates the HTML table to display the scores saved to the score board
+var table = document.createElement('table');
+table.id = 'table';
+var tableHead = table.createTHead();
+var headRow = tableHead.insertRow(0);
+headRow.insertCell(0).innerHTML = '<b>Name</b>';
+headRow.insertCell(1).innerHTML = '<b>Score</b>';
+
+
+// This function inserts values into the HTML table that was retrieved from the array stored in scoreHistory
+
+/* This for loop creates a var integer equal to 0, 
+creates the condition that the integer is less than the length of the array in scoreHistory,
+loop will run the code for the integer to increase by one until its larger than array.length
+*/
+for (var i = 0; i < scoreHistory.length; i++) {
+
+/* this portion of the function creats the 'row' variable 
+   and sets it equal to the table using  the insertRow method
+   storing the value of an integer increasing by one   
+*/
+     var row = table.insertRow(i + 1);
+
+// These rows use the method insertcell with a value as a string property which equals the array's index stored in score history along with the name/score
+     row.insertCell(0).innerHTML = scoreHistory[i].name;
+     row.insertCell(1).innerHTML = scoreHistory[i].score;
 }
+
+// this will render the table by the method appendChild given the id of table in the elements of the scoreboard
+scoreboardEl.appendChild(table);
+
+}
+
+// This sets a timer with a countdown
+
+let secondsLeft =75; 
+
+function setTime(){
+    timeInterval = setInterval(function(){
+        secondsLeft--;
+        timerEl.textContent = "Time: " + secondsLeft;
+
+        if(secondsLeft <= 0){
+        // stops this action at the setinterval method
+        clearInterval(timeInterval);
+        quizEl.remove();
+        endEl.style.display = "block";
+        timerEl.remove();
+        score = 0;
+        }
+
+// set to 1000th of a millisecond
+    }, 1000);
+}
+
+
+// User is presented with a mulitple choice question on the quiz
+
+let qArray = [
+
+{
+    question: "Javascript is an _______ language?",
+    options: ["A) Object-Oriented", "B) Object-Based", "C) Procedural", "D) None of the Above"],
+    correctAnswer: 0
+}, 
+
+{
+    question: "Upon encountering empty statements, what does the Javascript Interpreter do?",
+    options: ["A) Throws an error", "B) Ignores the statements", "C) Gives a warning", "D) None of the above"],
+    correctAnswer: 1
+}, 
+
+{
+    question: "Which of the following methods can be used to display data in some form using Javascript?",
+    options: ["A) document.write()", "B) console.log()", "C) window.alert()", "D) All of the above"],
+    correctAnswer: 3
+}, 
+
+{
+    question: "How can a datatype be declared to be a constant type?",
+    options: ["A) const", "B) var", "C) let", "D) constant"],
+    correctAnswer: 0
+}, 
+
+{
+    question: "When the switch statement matches the expression with the given labels, how is the comparison done?",
+    options: ["A) Both the datatype and the result of the expression are compared.", "B) Only the datatype of the expression is compared.", "C) Only the value of the expression is compared.", "D) None of the above."],
+    correctAnswer: 0
+}, 
+
+{
+    question: "What keyword is used to check whether a given property is valid or not?",
+    options: ["A) in", "B) is in", "C) exists", "D) lies"],
+    correctAnswer: 0
+}, 
+
+{
+    question: "When an operator’s value is NULL, the typeof returned by the unary operator is:",
+    options: ["A) Boolean", "B) Undefined", "C) Object", "D) Integer"],
+    correctAnswer: 2
+}, 
+
+];
