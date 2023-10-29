@@ -3,52 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Java Script Quiz</title>
+
+    <link rel="stylesheet" href="./workspace/css/reset.css">
     <link rel="stylesheet" href="./workspace/css/style.css">
+
 </head>
 <body>
 
-  <!-- nav bar section -->
-    <div class="nav-bar">
-    <button>View Highscores</button>
-    <p>Timer: 00:00</p>
+  <!-- Quiz div container -->
+    <div id="root-m">
+        <main>
+            <header>
+                <button id="scoreBtn">View Highscores</button>
+                <p id="timer"></p>
+            </header>
+        </main>
    </div> 
 
-    <div class="app">
-        <h1>Javascript Quiz</h1>
-        <div class="quiz-view">
-        <h2 id="question">Question Here</h2>
-        <div id="answer-buttons">
-            <button class="btn">Answer 1</button>
-            <button class="btn">Answer 2</button>
-            <button class="btn">Answer 3</button>
-            <button class="btn">Answer 4</button>
-        </div>
-        <button id="nxt-btn">Next</button>
-        </div>
-    </div>
+   <!-- Title Page/Start Button -->
+    <section id="home">
 
-    <!-- <section class="highscores-view">
-        <h2>Highscores</h2>
-        <ol>
-            <li>AG - 22</li>
-            <li>AG - 22</li>
-            <li>AG - 22</li>
-            <li>AG - 22</li>
-            <li>AG - 22</li>
-            <li>AG - 22</li>
-            <li>AG - 22</li>
-            <li>AG - 22</li>
-            <li>AG - 22</li>
-            <li>AG - 22</li>
-            <li>AG - 22</li>
-            <li>AG - 22</li>
-        </ol>
-        <button>Go Back</button>
-        <button>Clear Highscores</button>
-    </section> -->
+        <div>
+            <h1>Javascript Quiz</h1>
 
-<script src="./workspace/js/script.js"></script>
+            <p id="instruct">ATTEMPT TO ANSWER THE FOLLOWING CODE-RELATED QUESTIONS WITHIN THE SET TIME LIMIT. </p>
+        </div>
+        <button id="start">
+           Proceed to Quiz 
+        </button>
+        
+    </section>
+
+    <!-- Quiz Portion -->
+    <section id="quiz">
+        <h2 id="questions"></h2>
+        <ul id="options">
+          <button class="options-btns" id="0"></button>
+          <button class="options-btns" id="1"></button>
+          <button class="options-btns" id="2"></button>
+          <button class="options-btns" id="3"></button>
+        </ul>
+
+        <p id="answer-check"></p>
+      
+
+      <div>
+
+      </div>
+    </section>
 </body>
 </html>
 
