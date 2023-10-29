@@ -1,3 +1,46 @@
+:root {
+    --bkgrnd: #2f547c;
+    --text: white;
+    --btns: #e55661;
+}
+
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+/* hides the quiz, finish, score sections on the page */
+  #quiz,
+  #finish,
+  #score {
+    display: none;
+  }
+
+
+  #root-m {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+  } 
+
+/* aligns all the text in each text to the center */
+  #home,
+  #quiz,
+  #finish,
+  #score,
+  #table {
+    text-align: center;
+  }
+
+
+/* Styles the body of the web page */
+  body {
+    background-color: var(--bkgrnd);
+    color: var(--text);
+  } 
+
+
 p {
     color: #c20cad;
     font-size: 1.3em;
