@@ -6,86 +6,93 @@
     
     <title>Java Script Quiz</title>
 
-    <link rel="stylesheet" href="./workspace/css/reset.css">
-    <link rel="stylesheet" href="./workspace/css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
 
-</head>
-<body>
+    </head>
+    <body>
+   
+    <!-- Quiz div container -->
+         <div id="root-m">
+            <main>
+                <header>
+                    <button id="scoreBtn">View Highscores</button>
+                    <p id="timer"></p>
+                </header>
+           
+                 <!-- Title Page/Start Button -->
+                  <section id="home">
+              
+                      <div>
+                          <h1>Javascript Quiz</h1>
+              
+                          <p id="instruct">ATTEMPT TO ANSWER THE FOLLOWING CODE-RELATED QUESTIONS WITHIN THE SET TIME LIMIT. </p>
+                      </div>
+                      <button id="start">
+                         Proceed to Quiz 
+                      </button>
+                      
+                  </section>
+               
+                  <!-- Quiz Portion -->
+                  <section id="quiz">
+                      <h2 id="questions"></h2>
+                      <ul id="options">
+                        <button class="options-btns" id="0"></button>
+                        <button class="options-btns" id="1"></button>
+                        <button class="options-btns" id="2"></button>
+                        <button class="options-btns" id="3"></button>
+                      </ul>
+              
+                      <p id="compare-answer"></p>
+                    
+              
+                    <div>
+              
+                    </div>
+                  </section>
+                
+                  <!-- Quiz Final Page -->
+              
+                  <section id="end">
+              
+                      <h2>Complete!</h2>
+              
+                      <p id="finalscore"></p>
+              
+                      <div id="input-area">
+                          <input placeholder="Enter Initials Here (E.G)" id="input">
+              
+                          <button id="submit">Submit</button>
+                      </div>
+              
+                  </section>
+              
+                  <!-- List of Users Highscores -->
+              
+                  <section id="score">
+              
+                      <h2>Current Score Rankings</h2>
+              
+                      <ul id="scoreboard">   
+                      </ul>
+                      <div id="end-btns">
+                          <button id="retry">
+                              Retry
+                          </button>
+              
+                          <button id="clear">
+                              Clear
+                          </button>
+                      </div>
+              
+              
+            </section>
 
-  <!-- Quiz div container -->
-    <div id="root-m">
-        <main>
-            <header>
-                <button id="scoreBtn">View Highscores</button>
-                <p id="timer"></p>
-            </header>
         </main>
-   </div> 
-
-   <!-- Title Page/Start Button -->
-    <section id="home">
-
-        <div>
-            <h1>Javascript Quiz</h1>
-
-            <p id="instruct">ATTEMPT TO ANSWER THE FOLLOWING CODE-RELATED QUESTIONS WITHIN THE SET TIME LIMIT. </p>
-        </div>
-        <button id="start">
-           Proceed to Quiz 
-        </button>
-        
-    </section>
-
-    <!-- Quiz Portion -->
-    <section id="quiz">
-        <h2 id="questions"></h2>
-        <ul id="options">
-          <button class="options-btns" id="0"></button>
-          <button class="options-btns" id="1"></button>
-          <button class="options-btns" id="2"></button>
-          <button class="options-btns" id="3"></button>
-        </ul>
-
-        <p id="answer-check"></p>
-      
-
-      <div>
-
-      </div>
-    </section>
+         
+    </div>
+            
+    <script src="./js/script.js"></script>
 </body>
 </html>
-
-    <!-- Quiz Intro -->
-
-    <!-- <header class="quiz-intro">
-        <h1>Welcome to JS Quiz</h1>
-        <p>Lets get started with the quiz.</p>
-        <button>Start Quiz!</button>
-    </header> -->
-
-         <!-- ------ -->
-         <!-- Step 3 -->
-         <!-- ------ -->
-
-
-         <!-- <section class="quiz-exit-view">
-            <h2>Quiz Finished</h2>
-            <p>Your Score: 00</p>
-            <form>
-                <h1>Enter Initials: </h1>
-                <input type="text" class="enInit" placeholder="AG">
-                <button type="submit">Submit</button>
-            </form>
-         </section> -->
-
-         <!-- ------ -->
-         <!-- Step 4 -->
-         <!-- ------ -->
-         
-       
-    <!-- </div> -->
-  
-
-
-<!-- </div> -->
