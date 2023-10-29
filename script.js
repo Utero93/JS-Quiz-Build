@@ -88,7 +88,7 @@ submitEl.addEventListener("click", function(){
     getScores();
 });
 
-// Grabs the quiz
+// Allows the user to retry the quiz
 retryEl.addEventListener("click", function(){
 // reloads the location of the contents in the variable retryEl()
     location.reload();
@@ -104,3 +104,48 @@ clearEl.addEventListener("click", function(){
     location.reload();
 });
 
+// saves the users current quiz score
+function setScore(){
+    let inits = inputEl.ariaValueMax.toUpperCase();
+
+    console.log(inits);
+
+// When user doesnt enter initials, the value is then saved to "unknown" by default
+if(inits === ''){
+    inits = "Unknown";
+}
+
+let scoreHistory = [];
+let newScore = {
+    name: inits,
+    score: score
+}
+
+let lastStorage = localStorage.getItem("scoreHistory");
+
+// If the saved local storage exists, getItem from the local storage and pass through array in scoreHistory
+if (lastStorage !== null){
+    scoreHistory = JSON.parse(lastStorage);
+}
+
+// adds new score to the values of the array store in the variable scoreHistory
+scoreHistory.push(newScore);
+
+// Uses the saved data from Local storage to setItem to the string of text and using the json to turn the key/value pairs stored in the scoreHistory array into a string
+localStorage.setItem("scoredHistory", JSON.stringify(scoreHistory));
+
+console.log(scoreHistory);
+
+}
+
+// This function retrieves scores from data saveed to the local storage
+function getScores(){
+
+let scoreHistory = JSON.parse(localStorage.getItem("scoreHistory"));
+
+// This function sorts the scoreboard array by score in descending order
+scoreHistory.sort(function(a, b) {
+    return b.score - a.score;
+});
+
+}
