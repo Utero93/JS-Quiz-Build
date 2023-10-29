@@ -251,3 +251,55 @@ let qArray = [
 }, 
 
 ];
+
+
+// This function will render the multiple choice options on the page, sequentially
+function showQuestions(){
+
+    // If the questions are completed or the time runs out, the quiz session ends and the end page is displayed
+    if(questionI >= qArray.length){
+
+        quizEl.remove();
+        endEl.style.display = "block";
+        clearInterval(timeInterval);
+        timerEl.remove();
+        score = secondsLeft;
+
+        // If an incorrect answer as time runs out results in a negative time, score is set to 0
+        if(score < 0){
+            score = 0;
+        }
+
+        finalScoreEl.textContent = `Your current score is ${score}.`
+
+    } else {
+
+     // This quiz will render one question at a time
+     for (let i = 0; i < qArray[questionI].options.length; i++){
+
+        let optEl = document.getElementById(`${i}`);
+
+        questionEl.textContent = qArray[questionI].question;
+        questionEl.textContent = qArray[questionI].options[i];
+
+        optEl.onclick = function() {
+            let correctAnswer = qArray[questionI].correctAnswer;
+
+            // If the answer is correct, the function will render "Oh Yeah!"
+            if (i === correctAnswer){
+                acCheckEl.textContent = "Oh Yeah!"
+                acCheckEl.style.borderTop = "3px solid white"
+            }
+
+            //  If the answer is wrong, The page renders "Need More Practice."
+            else {
+                acCheckEl.innerText = "Need More Practice.";
+                acCheckEl.style.borderTop = "2px solid white";
+                secondsLeft -= 10;
+            }
+            questionI++;
+            showQuestions();
+        }
+     } 
+  }
+}
