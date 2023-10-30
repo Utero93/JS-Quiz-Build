@@ -1,7 +1,7 @@
 :root {
-    --bkgrnd: #2f547c;
-    --text: white;
-    --btns: #e55661;
+    --bkgrnd: #2da1a3;
+    --text: rgb(255, 255, 255);
+    --btns: #e74646;
 }
 
 
@@ -11,7 +11,7 @@
 
 /* hides the quiz, finish, score sections on the page */
   #quiz,
-  #finish,
+  #end,
   #score {
     display: none;
   }
@@ -27,7 +27,7 @@
 /* aligns all the text in each text to the center */
   #home,
   #quiz,
-  #finish,
+  #end,
   #score,
   #table {
     text-align: center;
@@ -54,9 +54,15 @@
   h2 {
     margin: 3vh auto;
   }
+
 /* styles the the single h2 element */
   h2 {
     margin-top: 50px;
+  }
+
+  #start {
+    border: 2px solid white;
+    border-radius: 20px;
   }
   
   ul {
@@ -83,7 +89,7 @@
     font-size: 1rem;
     padding: 10px 20px;
     width: 20vw;
-    border-radius: 50px;
+    border-radius: 30px;
   }
   
   button:hover {
@@ -111,4 +117,50 @@
     align-items: center;
   }
   
- 
+  #retry,
+  #clear {
+    border: 2px solid white;
+    border-radius: 20px;
+  }
+  
+  #scores {
+    background-color: var(--bkgrnd);
+    font-size: 1.3rem;
+    text-wrap: nowrap;
+    border: 2px solid white;
+  }
+  #score h2 {
+    border-bottom: 2px solid white;
+    border-radius: 2px;
+  }
+  #finalscore {
+    margin-bottom: 3vh;
+  }
+  
+  #scoreboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 20px;
+  }
+  
+  #compare-answer {
+    margin-top: 30px;
+    padding: 20px;
+  }
+  
+  #retry {
+    margin: 3vh 0;
+  }
+  
+  b {
+    border-collapse: separate;
+    padding: 10px 10vw;
+    border-bottom: 2px solid white;
+  }
+  
+  td, 
+  th {
+    padding: 20px 40px;
+  }

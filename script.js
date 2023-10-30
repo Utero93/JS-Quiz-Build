@@ -1,10 +1,3 @@
-// User Story
-
-/* As a student
-I want to take a timed quiz on the basics of Javascript that stores a high score 
-So that i can accurately see my progress compared to the other students in the class
-*/
-
 
 // Variables with a global scope
 let timeInterval;
@@ -19,7 +12,7 @@ let startEl = document.getElementById("start");
 // Variables for the quiz html element using a id'd container for questions/answers
 let quizEl = document.getElementById("quiz");
 let questionEl = document.getElementById("questions");
-let acCheckEl = document.getElementById("answer-check");
+let acCheckEl = document.getElementById("compare-answer");
 let questionI = 0;
 
 // Variables for the html element using a id'd container of end of quiz section 
@@ -48,7 +41,7 @@ homeEl.remove();
 quizEl.style.display = "block";
 
 // Line 49 - 50 are calling both the set time and showQuestions function
-setTimeout();
+setTime();
 showQuestions();
 
 });
@@ -72,6 +65,7 @@ scoresEl.addEventListener("click", function(){
 */
     scoreSectionEl.style.display = "block";
 
+    getScores();
 });
 
 // Submits the users intials and scores
@@ -82,7 +76,7 @@ submitEl.addEventListener("click", function(){
     scoreSectionEl.style.display = "block";
 
 // Sets the value for the text area in the section for inputting scores
-    setScores();
+    setScore();
 
 // Gets the value from the text within the scores section
     getScores();
@@ -90,6 +84,7 @@ submitEl.addEventListener("click", function(){
 
 // Allows the user to retry the quiz
 retryEl.addEventListener("click", function(){
+
 // reloads the location of the contents in the variable retryEl()
     location.reload();
 });
@@ -106,18 +101,18 @@ clearEl.addEventListener("click", function(){
 
 // saves the users current quiz score
 function setScore(){
-    let inits = inputEl.ariaValueMax.toUpperCase();
+    let initials = inputEl.value.toUpperCase();
 
-    console.log(inits);
+    console.log(initials);
 
 // When user doesnt enter initials, the value is then saved to "unknown" by default
-if(inits === ''){
-    inits = "Unknown";
+if(initials === ''){
+    initials = "Unknown";
 }
 
 let scoreHistory = [];
 let newScore = {
-    name: inits,
+    name: initials,
     score: score
 }
 
@@ -132,7 +127,7 @@ if (lastStorage !== null){
 scoreHistory.push(newScore);
 
 // Uses the saved data from Local storage to setItem to the string of text and using the json to turn the key/value pairs stored in the scoreHistory array into a string
-localStorage.setItem("scoredHistory", JSON.stringify(scoreHistory));
+localStorage.setItem("scoreHistory", JSON.stringify(scoreHistory));
 
 console.log(scoreHistory);
 
@@ -183,7 +178,7 @@ scoreboardEl.appendChild(table);
 
 // This sets a timer with a countdown
 
-let secondsLeft =75; 
+let secondsLeft = 75; 
 
 function setTime(){
     timeInterval = setInterval(function(){
@@ -206,7 +201,7 @@ function setTime(){
 
 // User is presented with a mulitple choice question on the quiz
 
-let qArray = [
+let questionArray = [
 
 {
     question: "Javascript is an _______ language?",
@@ -238,18 +233,6 @@ let qArray = [
     correctAnswer: 0
 }, 
 
-{
-    question: "What keyword is used to check whether a given property is valid or not?",
-    options: ["A) in", "B) is in", "C) exists", "D) lies"],
-    correctAnswer: 0
-}, 
-
-{
-    question: "When an operator’s value is NULL, the typeof returned by the unary operator is:",
-    options: ["A) Boolean", "B) Undefined", "C) Object", "D) Integer"],
-    correctAnswer: 2
-}, 
-
 ];
 
 
@@ -257,7 +240,7 @@ let qArray = [
 function showQuestions(){
 
     // If the questions are completed or the time runs out, the quiz session ends and the end page is displayed
-    if(questionI >= qArray.length){
+    if (questionI >= questionArray.length){
 
         quizEl.remove();
         endEl.style.display = "block";
@@ -275,25 +258,25 @@ function showQuestions(){
     } else {
 
      // This quiz will render one question at a time
-     for (let i = 0; i < qArray[questionI].options.length; i++){
+     for (let i = 0; i < questionArray[questionI].options.length; i++){
 
-        let optEl = document.getElementById(`${i}`);
+        let optionsEl = document.getElementById(`${i}`);
 
-        questionEl.textContent = qArray[questionI].question;
-        questionEl.textContent = qArray[questionI].options[i];
+        questionEl.textContent = questionArray[questionI].question;
+        optionsEl.textContent = questionArray[questionI].options[i];
 
-        optEl.onclick = function() {
-            let correctAnswer = qArray[questionI].correctAnswer;
+        optionsEl.onclick = function() {
+            let correctAnswer = questionArray[questionI].correctAnswer;
 
-            // If the answer is correct, the function will render "Oh Yeah!"
+            // If the answer is correct, the function will render "Correct!"
             if (i === correctAnswer){
-                acCheckEl.textContent = "Oh Yeah!"
-                acCheckEl.style.borderTop = "3px solid white"
+                acCheckEl.textContent = "Correct!";
+                acCheckEl.style.borderTop = "2px solid white";
             }
 
-            //  If the answer is wrong, The page renders "Need More Practice."
+            //  If the answer is wrong, The page renders "Incorrect."
             else {
-                acCheckEl.innerText = "Need More Practice.";
+                acCheckEl.innerText = "Incorrect.";
                 acCheckEl.style.borderTop = "2px solid white";
                 secondsLeft -= 10;
             }
